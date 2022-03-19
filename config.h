@@ -105,8 +105,11 @@ static const keymap_t keys[] = {
 	{ 0,            XK_minus,         g_zoom,               -1 },
 	{ 0,            XK_KP_Subtract,   g_zoom,               -1 },
 	{ 0,            XK_m,             g_toggle_image_mark,  None },
+	{ 0,            XK_s,             g_toggle_image_mark,  None },
 	{ 0,            XK_M,             g_mark_range,         None },
+	{ 0,            XK_S,             g_mark_range,         None },
 	{ ControlMask,  XK_m,             g_reverse_marks,      None },
+	{ ControlMask,  XK_s,             g_reverse_marks,      None },
 	{ 0,            XK_U,             g_unmark_all,         None },
 	{ 0,            XK_N,             g_navigate_marked,    +1 },
 	{ 0,            XK_P,             g_navigate_marked,    -1 },
@@ -164,7 +167,7 @@ static const keymap_t keys[] = {
 	{ 0,            XK_underscore,    i_flip,               FLIP_VERTICAL },
 	{ 0,            XK_a,             i_toggle_antialias,   None },
 	{ 0,            XK_A,             i_toggle_alpha,       None },
-	{ 0,            XK_s,             i_slideshow,          None },
+	{ 0,            XK_t,             i_slideshow,          None },
 };
 
 /* mouse button mappings for image mode: */
