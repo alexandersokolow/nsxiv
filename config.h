@@ -11,9 +11,9 @@ static const char *DEFAULT_WIN_BG     = "white";
 static const char *DEFAULT_WIN_FG     = "black";
 static const char *DEFAULT_MARK_COLOR = NULL;  /* NULL means it will default to window foreground */
 #if HAVE_LIBFONTS
-static const char *DEFAULT_BAR_BG     = NULL;  /* NULL means it will default to window background */
-static const char *DEFAULT_BAR_FG     = NULL;  /* NULL means it will default to window foreground */
-static const char *DEFAULT_FONT       = "monospace-8";
+static const char *DEFAULT_BAR_BG     = "black";  /* NULL means it will default to window background */
+static const char *DEFAULT_BAR_FG     = "#00ff26";  /* NULL means it will default to window foreground */
+static const char *DEFAULT_FONT       = "SpaceMono-10";
 
 /* if true, statusbar appears on top of the window */
 static const bool TOP_STATUSBAR = false;
@@ -87,6 +87,7 @@ static const keymap_t keys[] = {
 	{ 0,            XK_f,             g_toggle_fullscreen,  None },
 	{ 0,            XK_b,             g_toggle_bar,         None },
 	{ ControlMask,  XK_x,             g_prefix_external,    None },
+	{ 0,            XK_space,         g_prefix_external,    None },
 	{ 0,            XK_g,             g_first,              None },
 	{ 0,            XK_G,             g_n_or_last,          None },
 	{ 0,            XK_r,             g_reload_image,       None },
@@ -106,7 +107,7 @@ static const keymap_t keys[] = {
 	{ 0,            XK_m,             g_toggle_image_mark,  None },
 	{ 0,            XK_M,             g_mark_range,         None },
 	{ ControlMask,  XK_m,             g_reverse_marks,      None },
-	{ ControlMask,  XK_u,             g_unmark_all,         None },
+	{ 0,            XK_U,             g_unmark_all,         None },
 	{ 0,            XK_N,             g_navigate_marked,    +1 },
 	{ 0,            XK_P,             g_navigate_marked,    -1 },
 	{ 0,            XK_braceleft,     g_change_gamma,       -1 },
@@ -124,9 +125,10 @@ static const keymap_t keys[] = {
 	{ 0,            XK_R,             t_reload_all,         None },
 
 	{ 0,            XK_n,             i_navigate,           +1 },
+	{ 0,            XK_l,             i_navigate,           +1 },
 	{ 0,            XK_n,             i_scroll_to_edge,     DIR_LEFT | DIR_UP },
-	{ 0,            XK_space,         i_navigate,           +1 },
 	{ 0,            XK_p,             i_navigate,           -1 },
+	{ 0,            XK_h,             i_navigate,           -1 },
 	{ 0,            XK_p,             i_scroll_to_edge,     DIR_LEFT | DIR_UP },
 	{ 0,            XK_BackSpace,     i_navigate,           -1 },
 	{ 0,            XK_bracketright,  i_navigate,           +10 },
